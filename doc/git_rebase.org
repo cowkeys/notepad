@@ -1,0 +1,8 @@
+git rebase -i HEAD~3
+pick aaaaaa
+pick bbbbb
+pick ccccc
+替换成
+pick aaaaaa
+s bbbbb
+s ccccc

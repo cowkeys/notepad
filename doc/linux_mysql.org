@@ -1,0 +1,37 @@
+http://www.cnblogs.com/xujishou/p/6306765.html
+mac=======================
+CREATE USER 'tstack'@'%' IDENTIFIED BY '123456';
+grant all privileges on tstack.* to 'tstack'@'%' identified by '123456';
+flush privileges;
+
+修改root密码================
+http://blog.csdn.net/soft2buy/article/details/50223373
+
+
+ubuntu=====================
+sudo netstat -tap | grep mysql 查看有无mysql
+sudo apt-get install mysql-server mysql-client
+
+sudo vi /etc/mysql/my.cnf   可能在附近文件夹里面
+
+bind-address = 127.0.0.1 //找到此内容并且注释
+grant all privileges on *.* to 'root'@'%' identified by '123456' with grant option;
+flush privileges;
+
+service start/stop/restart mysql
+/etc/init.d/mysql start/restart/stop
+
+进入mysql -uroot -p
+查看mysql信息 
+show global variables；
+
+show global variables like 'port'; 
+
+
+数据库存放目录： /var/lib/mysql/
+
+相关配置文件存放目录： /usr/share/mysql
+
+相关命令存放目录： /usr/bin(mysqladmin mysqldump等命令)
+
+启动脚步存放目录： /etc/rc.d/init.d/

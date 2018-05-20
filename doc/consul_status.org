@@ -1,0 +1,17 @@
+查看服务列表
+curl 10.0.0.24:8500/v1/catalog/services | python -mjson.tool|grep foll
+查看服务状态
+curl -s http://localhost:8500/v1/health/state/any | python -m json.tool
+
+curl localhost:8500/v1/catalog/nodes
+
+查看key value  需要解码base64
+curl -s http://192.168.0.59:8500/v1/kv/followme/config |python -m json.tool
+
+===
+
+curl 10.0.0.24:8500/v1/catalog/services | python -mjson.tool|grep foll
+
+curl -s http://localhost:8500/v1/health/state/any | python -m json.tool
+
+curl localhost:8500/v1/catalog/nodes

@@ -1,0 +1,7 @@
+客户端gui安装
+http://www.jianshu.com/p/214baa511f2e
+
+=============================
+apt-get update
+apt-get install redis-server
+redis-server &
