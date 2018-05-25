@@ -1,4 +1,7 @@
+** git rebase
+
 git rebase -i HEAD~3
+
 pick aaaaaa
 pick bbbbb
 pick ccccc

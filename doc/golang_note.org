@@ -1,0 +1,36 @@
+** slice
+*** 1. slice当长度和容量相同后，再次向切片追加内容，长度加一容量翻倍。但是，当元素超过1000后，每次会增加25
+#+begin_src
+func main() {
+	arr := make([]int, 2)
+	fmt.Printf("arr len:%v cap:%v \n", len(arr), cap(arr))
+
+	for i := 0; i < 20; i++ {
+		arr = append(arr, i)
+		fmt.Printf("arr len:%v cap:%v \n", len(arr), cap(arr))
+	}
+}
++++++++result
+arr len:2 cap:2
+arr len:3 cap:4
+arr len:4 cap:4
+arr len:5 cap:8
+arr len:6 cap:8
+arr len:7 cap:8
+arr len:8 cap:8
+arr len:9 cap:16
+arr len:10 cap:16
+arr len:11 cap:16
+arr len:12 cap:16
+arr len:13 cap:16
+arr len:14 cap:16
+arr len:15 cap:16
+arr len:16 cap:16
+arr len:17 cap:32
+arr len:18 cap:32
+arr len:19 cap:32
+arr len:20 cap:32
+arr len:21 cap:32
+arr len:22 cap:32
+#+end_src
+

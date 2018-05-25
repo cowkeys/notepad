@@ -1,12 +1,14 @@
 * 网站改https访问
 ** 参考 http://acme.sh/  中文https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
 ** 步骤
-*** curl  https://get.acme.sh | sh 
-*** alias acme.sh=~/.acme.sh/acme.sh
-*** 
-    1. 执行 acme.sh --issue -d *.myweb.com  -d myweb.com --dns \
+*** 1.install
+- curl  https://get.acme.sh | sh 
+*** 2,alias 
+- acme.sh=~/.acme.sh/acme.sh
+*** 3.acme指令
+-1. 执行 acme.sh --issue -d *.myweb.com  -d myweb.com --dns \
  --yes-I-know-dns-manual-mode-enough-go-ahead-please
-    2. 出现如下信息
+-2. 出现如下信息
 [Fri May 18 10:53:44 CST 2018] Add the following TXT record:
 [Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
 [Fri May 18 10:53:44 CST 2018] TXT value: 'e_GHac5gARINJsHDuIzR1eidOHVsCU86MFLYJ3UX0ak' <-这里
@@ -15,24 +17,25 @@
 [Fri May 18 10:53:44 CST 2018] Add the following TXT record:
 [Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
 [Fri May 18 10:53:44 CST 2018] TXT value: '4pUBNqp20W0o4IpwnU3OYPbWbnzHS06Rk_7kNMKbeOQ' <-这里
-   3. 在域名解析加入2条txt记录：
+- 3. 在域名解析加入2条txt记录：
 _acme-challenge.cowkeys.me
 e_GHac5gARINJsHDuIzR1eidOHVsCU86MFLYJ3UX0ak
 _acme-challenge.cowkeys.me
 4pUBNqp20W0o4IpwnU3OYPbWbnzHS06Rk_7kNMKbeOQ
 
-*** acme.sh --renew -d *.myweb.com  -d myweb.com --dns \
+*** 4.renew
+acme.sh --renew -d *.myweb.com  -d myweb.com --dns \
  --yes-I-know-dns-manual-mode-enough-go-ahead-please
 
-*** 把~/.acme.sh/*.cowkeys.me/目录下的fullchain.cer 和key文件(可重命名） 放到服务器上
+*** 5.把~/.acme.sh/*.cowkeys.me/目录下的fullchain.cer 和key文件(可重命名） 放到服务器上
 
-*** linux_nginx 配置示例
+*** 6.linux_nginx 配置示例
+#+begin_src
 server {
         listen 80 default;
         listen 443 ssl;
 
         server_name cowkeys.me;
-
         ssl on;
           ssl_certificate /root/sshfile/fullchain.cer;
           ssl_certificate_key /root/sshfile/cowkeys.key;
@@ -47,7 +50,8 @@ server {
                 proxy_pass http://127.0.0.1:8088;
         }
 }
+#+end_src
 
-*** nginx -t 验证 配置
-*** service nginx reload 
-*** 注意阿里云 443端口要打开
+*** 7.nginx -t 验证 配置
+*** 8.service nginx reload 
+*** 9.注意 打开443端口

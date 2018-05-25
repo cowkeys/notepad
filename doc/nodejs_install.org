@@ -1,15 +1,12 @@
-https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
-===========================
-原始安装
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
 
-sudo apt-get install -y build-essential
 
-===========================
-nvm安装
-https://github.com/creationix/nvm/blob/master/README.md
+** 原始安装
+*** link https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+- curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+- sudo apt-get install -y nodejs
+- sudo apt-get install -y build-essential
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-
-nvm install stable
+** nvm安装
+*** link https://github.com/creationix/nvm/blob/master/README.md
+- curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+- nvm install stable

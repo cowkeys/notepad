@@ -1,42 +1,42 @@
-查看大小
+** 查看大小
 ll -lht 
 du sh *
 
-
-grep --color :高亮查询关键字
-
-grep -A 10 xxx : 显示关键字后10行，查异常栈时很有用
-
-grep -B 10 xxx : 显示关键字前10行
-
-grep -C 10 xxx : 显示关键字前后10行
-
-grep -i :不区分大小写
-
-egrep ‘aaa|bbb’:可以统计aaa或bbb的结果，egrep基本等价 grep -E
-
-改变nano 到vim
+** nano 到vim
 sudo update-alternatives --config editor
 
-#从文件内容查找匹配指定字符串的行：
-$ grep "被查找的字符串" 文件名
+** grep
++ 0grep --color :高亮查询关键字
 
-#从文件内容查找与正则表达式匹配的行：
-$ grep –e “正则表达式” 文件名
+*** grep -A 10 xxx : 显示关键字后10行，查异常栈时很有用
 
-#查找时不区分大小写：
-$ grep –i "被查找的字符串" 文件名
+*** grep -B 10 xxx : 显示关键字前10行
 
-#查找匹配的行数：
-$ grep -c "被查找的字符串" 文件名
+*** grep -C 10 xxx : 显示关键字前后10行
 
-#从文件内容查找不匹配指定字符串的行：
-$ grep –v "被查找的字符串" 文件名
+*** grep -i :不区分大小写
 
-#从根目录开始查找所有扩展名为.txt的文本文件，并找出包含"linux"的行
-find . -type f -name "*.txt" | xargs grep "linux"
+*** egrep ‘aaa|bbb’:可以统计aaa或bbb的结果，egrep基本等价 grep -E
 
-#替换文件名
-grep -rl 'windows' ./path | xargs sed -i 's/windows/linux/g'
-grep -i "windows" -r ./path | awk -F : '{print $1}' | sort | uniq | xargs sed -i 's/windows/linux/g'
-sed -i 's/old-word/new-word/g' *.txt
+*** 从文件内容查找匹配指定字符串的行：
+- $ grep "被查找的字符串" 文件名
+
+*** 从文件内容查找与正则表达式匹配的行：
+- $ grep –e “正则表达式” 文件名
+
+*** 查找时不区分大小写：
+- $ grep –i "被查找的字符串" 文件名
+
+*** 查找匹配的行数：
+- $ grep -c "被查找的字符串" 文件名
+
+*** 从文件内容查找不匹配指定字符串的行：
+- $ grep –v "被查找的字符串" 文件名
+
+*** 从根目录开始查找所有扩展名为.txt的文本文件，并找出包含"linux"的行
+- find . -type f -name "*.txt" | xargs grep "linux"
+
+*** 替换文件名
+- grep -rl ‘windows’ ./path | xargs sed -i ‘s/windows/linux/g’
+- grep -i “windows” -r ./path | awk -F : ‘{print $1}’ | sort | uniq | xargs sed -i ‘s/windows/linux/g’ 
+- sed -i ‘s/old-word/new-word/g’ *.txt
