@@ -2,30 +2,29 @@
 ** 参考 http://acme.sh/  中文https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
 ** 步骤
 *** 1.install
-- curl  https://get.acme.sh | sh 
+  - curl  https://get.acme.sh | sh 
 *** 2,alias 
-- acme.sh=~/.acme.sh/acme.sh
+  - acme.sh=~/.acme.sh/acme.sh
 *** 3.acme指令
--1. 执行 acme.sh --issue -d *.myweb.com  -d myweb.com --dns \
+- 1. 执行 acme.sh --issue -d *.myweb.com  -d myweb.com --dns \
  --yes-I-know-dns-manual-mode-enough-go-ahead-please
--2. 出现如下信息
-[Fri May 18 10:53:44 CST 2018] Add the following TXT record:
-[Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
-[Fri May 18 10:53:44 CST 2018] TXT value: 'e_GHac5gARINJsHDuIzR1eidOHVsCU86MFLYJ3UX0ak' <-这里
-[Fri May 18 10:53:44 CST 2018] Please be aware that you prepend _acme-challenge. before your domain
-[Fri May 18 10:53:44 CST 2018] so the resulting subdomain will be: _acme-challenge.cowkeys.me
-[Fri May 18 10:53:44 CST 2018] Add the following TXT record:
-[Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
-[Fri May 18 10:53:44 CST 2018] TXT value: '4pUBNqp20W0o4IpwnU3OYPbWbnzHS06Rk_7kNMKbeOQ' <-这里
+- 2. 出现如下信息
+  - [Fri May 18 10:53:44 CST 2018] Add the following TXT record:
+  - [Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
+  - [Fri May 18 10:53:44 CST 2018] TXT value: 'e_GHac5gARINJsHDuIzR1eidOHVsCU86MFLYJ3UX0ak' <-这里
+  - [Fri May 18 10:53:44 CST 2018] Please be aware that you prepend _acme-challenge. before your domain
+  - [Fri May 18 10:53:44 CST 2018] so the resulting subdomain will be: _acme-challenge.cowkeys.me
+  - [Fri May 18 10:53:44 CST 2018] Add the following TXT record:
+  - [Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
+  - [Fri May 18 10:53:44 CST 2018] TXT value: '4pUBNqp20W0o4IpwnU3OYPbWbnzHS06Rk_7kNMKbeOQ' <-这里
 - 3. 在域名解析加入2条txt记录：
-_acme-challenge.cowkeys.me
-e_GHac5gARINJsHDuIzR1eidOHVsCU86MFLYJ3UX0ak
-_acme-challenge.cowkeys.me
-4pUBNqp20W0o4IpwnU3OYPbWbnzHS06Rk_7kNMKbeOQ
+  - _acme-challenge.cowkeys.me
+    - e_GHac5gARINJsHDuIzR1eidOHVsCU86MFLYJ3UX0ak
+  - _acme-challenge.cowkeys.me
+    - 4pUBNqp20W0o4IpwnU3OYPbWbnzHS06Rk_7kNMKbeOQ
 
 *** 4.renew
-acme.sh --renew -d *.myweb.com  -d myweb.com --dns \
- --yes-I-know-dns-manual-mode-enough-go-ahead-please
+  - acme.sh --renew -d *.myweb.com  -d myweb.com --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please
 
 *** 5.把~/.acme.sh/*.cowkeys.me/目录下的fullchain.cer 和key文件(可重命名） 放到服务器上
 
