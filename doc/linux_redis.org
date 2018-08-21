@@ -4,4 +4,18 @@
 *** command
 - apt-get update
 - apt-get install redis-server
-- redis-server &
+/etc/redis/redis.conf   
+
+- # bind 127.0.0.1
+- requirepass fjkalfjakl
+
+- service redis-server restart // - redis-server &
+
+
+为redis分配一个8888端口，操作步骤如下：
+1、$REDIS_HOME/redis.conf重新复制一份，重命名为redis8888.conf。
+2、打开redis8888.conf配置文件，找到port 6379这行，把6379改为8888。
+3、把redis8888.conf移到$REDIS_HOME/redis-svrs/taobaoAny目录下(taobaoAny为自己新建)。
+4、启动redis服务：redis-server /home/redis/redis-2.4.15/redis-svrs/taobaoAny/redis8888.conf &
+5、通过“ps -x | grep redis”查看进程，在输出的信息中会看到/home/redis/redis-2.4.15/redis-svrs/taobaoAny/redis8888.conf
+6、redis-cli -p 8888, 测试端口是否创建成功。

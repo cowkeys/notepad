@@ -1,0 +1,4 @@
+https://askubuntu.com/questions/585736/cant-clean-a-full-boot-because-of-unmet-dependencies
+
+sudo purge-old-kernels
+

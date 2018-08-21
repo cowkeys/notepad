@@ -26,7 +26,7 @@
 *** 4.renew
   - acme.sh --renew -d *.myweb.com  -d myweb.com --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please
 
-*** 5.把~/.acme.sh/*.cowkeys.me/目录下的fullchain.cer 和key文件(可重命名） 放到服务器上
+*** 5.把.~/.acme.sh/*.cowkeys.me/目录下的fullchain.cer 和key文件(可重命名） 放到服务器上
 
 *** 6.linux_nginx 配置示例
 #+begin_src
