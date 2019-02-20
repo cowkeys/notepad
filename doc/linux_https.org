@@ -8,6 +8,10 @@
 *** 3.acme指令
 - 1. 执行 acme.sh --issue -d *.myweb.com  -d myweb.com --dns \
  --yes-I-know-dns-manual-mode-enough-go-ahead-please
+ 
+[2019-02-20 fix
+sudo ~/.acme.sh/acme.sh --issue --force -d skrskr.online -d *.skrskr.online --dns --yes-I-know-dns-manual-mode-enough-go-ahead-please ]
+ 
 - 2. 出现如下信息
   - [Fri May 18 10:53:44 CST 2018] Add the following TXT record:
   - [Fri May 18 10:53:44 CST 2018] Domain: '_acme-challenge.cowkeys.me' <-这里
